@@ -18,7 +18,7 @@ https://opensource.org/licenses/MIT
 - right(angle in degree)
 
 
-## Propaties and default
+## Properties and default
 
 - this.x = 200;
 - this.y = 60;
