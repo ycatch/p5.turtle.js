@@ -1,6 +1,9 @@
 # p5.turtle.js
+
 Example of turtle graphics for p5.js.
-It is so simple and animated.
+
+This is very simple and animated turtle graphics program. There are two step in the process. 1st step, it record turtle moving in setup(). 2nd step, it playback turtle moving for animation in draw(). This program needs p5.js and p5.play.js library.
+
 
 ## Demo
 
