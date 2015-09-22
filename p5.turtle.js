@@ -6,7 +6,7 @@ var turtles_path = []; // array of Turtle objects
 var pathPointer = 0;
 var turtle;
 var turtleSprite;
-var tPlane; // graphic plane for turtle
+var tPlane; // graphic plane for pen layer
 
 setup = function() {
 	var canvas = createCanvas(480, 360);
@@ -25,12 +25,12 @@ setup = function() {
 	turtle.y = 180;
 	turtle.penDown = true;
 	turtle.penColor = turtle.color.blue;
-	for(var i = 0; i < 36; i++){
+	for(var i = 0; i < 18; i++){
 		for(var j = 0; j < 6; j++){
-			turtle.forward(50);
+			turtle.forward(90);
 			turtle.right(60);
 		};
-		turtle.right(10);
+		turtle.right(20);
 	};
 	// End of turtle code ------------------------------------------------------------
 };
@@ -55,7 +55,7 @@ draw = function() {
 function TBody() {
 	this.x = 200;
 	this.y = 60;
-	this.step = 5;
+	this.step = 3;
 	this.stepAngle = Math.PI / 36;
 	this.angleInRadians = 0;
 	this.penDown = false;
