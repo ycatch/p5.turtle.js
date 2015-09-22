@@ -63,35 +63,42 @@ setup = function() {
 	var canvas = createCanvas(480, 360);
 	canvas.parent("p5Canvas");
 	background(200);
-	tPlane = createGraphics(width, height);
-	
+
 	turtleSprite = createSprite(0, 0, 56, 64);
 	turtleSprite.addAnimation("moving", "images/turtle_1.png", "images/turtle_4.png");
 	turtleSprite.changeAnimation("moving");
 	
-	// Start turtle code - recode turtle moving.
+	tPlane = createGraphics(width, height); // pen layer
+	
+	// Start turtle code - recode turtle moving. -------------------------------------
 	turtle = new Turtle();
 	turtle.x = 240;
 	turtle.y = 180;
 	turtle.penDown = true;
-	turtle.penColor = turtle.color.red;
-	for(var i = 0; i < 6; i++){
-		turtle.forward(80);
-		turtle.right(60);
-	}
-	// End of turtle code
+	turtle.penColor = turtle.color.blue;
+	for(var i = 0; i < 36; i++){
+		for(var j = 0; j < 6; j++){
+			turtle.forward(50);
+			turtle.right(60);
+		};
+		turtle.right(10);
+	};
+	// End of turtle code ------------------------------------------------------------
 };
 
 draw = function() {
 	// Playback turtle moving for animation.
 	background(200);
 	turtle.draw2(pathPointer);
+	image(tPlane);
 	drawSprites();
-	myImage = image(tPlane);
 	
 	pathPointer += 1;
 	if (pathPointer >= turtles_path.length) {
 		pathPointer = 0;
+		tPlane.fill(200);
+		tPlane.noStroke();
+		tPlane.rect(0, 0, width, height);
 	}
 };
 
