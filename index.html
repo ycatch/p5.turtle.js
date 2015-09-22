@@ -25,11 +25,14 @@
 	</ul>
 </nav>
 <div class="grid">
-	<div class="col_12" style="margin-top:100px;">
-		<h1 class="center"><i class="fa fa-fire"></i> p5.turtle.js</h1>
-		<h4  class="center" style="color:#999;margin-bottom:40px;">Example of turtle graphics for p5.js</h4>
+	<div class="col_8" style="margin-top:100px;">
+		<h1><i class="fa fa-fire"></i> p5.turtle.js</h1>
+		<h4 style="color:#999;margin-bottom:40px;">Example of turtle graphics for p5.js</h4>
+		<p>Very simple and animated turtle graphics.</p>
 	</div>
-	<div id = "p5Canvas"  class="center"></div>
+	<div class="col_4" style="margin-top:100px;">
+		<div id = "p5Canvas" ></div>
+	</div>
 	
 	<div class="col_12" id="footer">
 		Copyright 2015 Yutaka Kachi All Rights Reserved released under MIT License.
@@ -43,7 +46,7 @@ var turtle;
 var tPlane; // graphic plane for turtle
 
 setup = function() {
-	var canvas = createCanvas(640, 240);
+	var canvas = createCanvas(360, 240);
 	canvas.parent("p5Canvas");
 	background(200);
 	tPlane = createGraphics(width, height);
