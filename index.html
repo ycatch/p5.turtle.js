@@ -25,7 +25,7 @@
 	</ul>
 </nav>
 <div class="grid">
-	<div class="col_8" style="margin-top:100px;">
+	<div class="col_6" style="margin-top:100px;">
 		<h1><img src="images/turtle_2.png" width="54" hight="63"> p5.turtle.js</h1>
 		<h4 style="color:#999;">Example of turtle graphics for p5.js</h4>
 		<p>Very simple and animated turtle graphics.</p>
@@ -34,7 +34,7 @@
 		</a></p>
 		<p><a href='https://github.com/ycatch/p5.turtle.js' target='_blank'>Github - p5.turtle.js</a></p>
 	</div>
-	<div class="col_4" style="margin-top:100px;">
+	<div class="col_6" style="margin-top:100px;">
 		<div id = "p5Canvas"></div>
 	</div>
 	<div class="col_12">
@@ -56,16 +56,23 @@
 var turtles_path = []; // array of Turtle objects
 var pathPointer = 0;
 var turtle;
+var turtleSprite;
 var tPlane; // graphic plane for turtle
 
 setup = function() {
-	var canvas = createCanvas(360, 240);
+	var canvas = createCanvas(480, 360);
 	canvas.parent("p5Canvas");
 	background(200);
 	tPlane = createGraphics(width, height);
 	
+	turtleSprite = createSprite(0, 0, 56, 64);
+	turtleSprite.addAnimation("moving", "images/turtle_1.png", "images/turtle_4.png");
+	turtleSprite.changeAnimation("moving");
+	
 	// Start turtle code - recode turtle moving.
 	turtle = new Turtle();
+	turtle.x = 240;
+	turtle.y = 180;
 	turtle.penDown = true;
 	turtle.penColor = turtle.color.red;
 	for(var i = 0; i < 6; i++){
@@ -79,6 +86,7 @@ draw = function() {
 	// Playback turtle moving for animation.
 	background(200);
 	turtle.draw2(pathPointer);
+	drawSprites();
 	myImage = image(tPlane);
 	
 	pathPointer += 1;
@@ -187,18 +195,6 @@ function Turtle() {
 	// drawing turtle in loop
 	this.draw2 = function(pointer) {
 		var target = turtles_path[pointer];
-
-		strokeWeight(1);
-		stroke(this.color.black);
-		fill(this.color.white);
-
-		// draw turtle body
-		ellipse(target.x, target.y, 30, 30);
-
-		// draw turtle neck
-		var headX = target.x + 20 * sin(target.angleInRadians);
-		var headY = target.y + 20 * cos(target.angleInRadians);
-		line(target.x, target.y, headX, headY);
 		
 		// draw path by Pen
 		if (target.penDown) {
@@ -210,6 +206,11 @@ function Turtle() {
 			}
 			tPlane.line(target.x, target.y, turtles_path[nextPointer].x, turtles_path[nextPointer].y);
 		}
+		
+		// draw turtle by sprite
+		turtleSprite.rotation = target.angleInRadians * -180 / Math.PI + 180;
+		turtleSprite.position.x = target.x;
+		turtleSprite.position.y = target.y;
 	};
 };
 </script>
