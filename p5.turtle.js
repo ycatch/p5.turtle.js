@@ -1,3 +1,4 @@
+/** Example of turtle graphics for p5.js. 
 	Copyright 2015 Yutaka Kachi released under the MIT license.
  */
 
