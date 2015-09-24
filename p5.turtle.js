@@ -27,11 +27,13 @@ setup = function() {
 	turtle.penColor = turtle.color.blue;
 	for(var i = 0; i < 18; i++){
 		for(var j = 0; j < 6; j++){
-			turtle.forward(90);
+			turtle.forward(85);
 			turtle.right(60);
 		};
 		turtle.right(20);
 	};
+	turtle.right(360);
+	turtle.right(360);
 	// End of turtle code ------------------------------------------------------------
 };
 
