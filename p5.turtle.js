@@ -136,19 +136,6 @@ function Turtle() {
 			target[prop] = this[prop];
 		}
 	};
-
-	// draw turtle once
-	this.draw = function() {
-		tPlane.strokeWeight(1);
-		tPlane.stroke(this.color.black);
-		tPlane.fill(this.color.white);
-
-		tPlane.ellipse(this.x, this.y, 30, 30);
-
-		var headX = this.x + 20 * sin(this.angleInRadians);
-		var headY = this.y + 20 * cos(this.angleInRadians);
-		tPlane.line(this.x, this.y, headX, headY);
-	};
 	
 	// drawing turtle in loop
 	this.draw2 = function(pointer) {
