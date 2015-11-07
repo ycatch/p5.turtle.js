@@ -29,8 +29,8 @@ https://opensource.org/licenses/MIT
 
 - this.x = 200;				X座標
 - this.y = 60;				Y座標
-- this.step = 5;			アニメーションのステップ
-- this.stepAngle = Math.PI / 36;	アニメーションの回転角度
+- this.step = 5;			アニメーション時の移動速度
+- this.stepAngle = Math.PI / 36;	アニメーション時の回転速度
 - this.angleInRadians = 0;		角度(ラジアン)
 - this.penDown = false;			ペンを下げる
 - this.penColor = "#000000";		ペンの色
