@@ -61,16 +61,19 @@
 	<h4>編集</h4>
 <textarea name="code_1" rows=30 cols=120>
 turtle = new Turtle();
-turtle.x = 240;
+turtle.x = 200;
 turtle.y = 180;
-turtle.penDown = true;
+
 turtle.penColor = turtle.color.blue;
 for(var i = 0; i < 18; i++){
-	for(var j = 0; j < 6; j++){
-		turtle.forward(85);
-		turtle.right(60);
+	for(var j = 0; j < 360; j++){
+		turtle.penDown = true;
+		turtle.forward(1);
+		turtle.right(1);
 	};
-	turtle.right(20);
+	turtle.penDown = false;
+	turtle.forward(10);
+	turtle.left(20);
 };
 turtle.right(360);
 turtle.right(360);
