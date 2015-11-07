@@ -21,16 +21,13 @@ setup = function() {
 	
 	// Start turtle code - recode turtle moving. -------------------------------------
 	turtle = new Turtle();
-	turtle.x = 240;
-	turtle.y = 180;
+	turtle.x = 140;
+	turtle.y = 80;
 	turtle.penDown = true;
 	turtle.penColor = turtle.color.blue;
-	for(var i = 0; i < 18; i++){
-		for(var j = 0; j < 6; j++){
-			turtle.forward(85);
-			turtle.right(60);
-		};
-		turtle.right(20);
+	for(var i = 0; i < 4; i++){
+			turtle.forward(200);
+			turtle.left(90);
 	};
 	turtle.right(360);
 	turtle.right(360);
