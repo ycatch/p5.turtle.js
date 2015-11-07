@@ -80,7 +80,7 @@ turtle.right(360);
 </textarea>
 	<p></p>
 	<input type="button" onclick="restart()" value="Re-Start">
-	<p></p>
+	<p><a href='README.md' target='_blank'>ヘルプ</a></p>
 
 	<pre id="code_2" hidden>
 	// End of turtle code ------------------------------------------------------------
@@ -240,16 +240,13 @@ turtle.right(360);
 		<pre>
 // Start turtle code - recode turtle moving. -------------------------------------
 turtle = new Turtle();
-turtle.x = 240;
-turtle.y = 180;
+turtle.x = 140;
+turtle.y = 80;
 turtle.penDown = true;
 turtle.penColor = turtle.color.blue;
-for(var i = 0; i &lt; 18; i++){
-    for(var j = 0; j &lt; 6; j++){
-        turtle.forward(85);
-        turtle.right(60);
-    };
-    turtle.right(20);
+for(var i = 0; i &lt; 4; i++){
+		turtle.forward(200);
+		turtle.left(90);
 };
 turtle.right(360);
 turtle.right(360);
@@ -260,7 +257,7 @@ turtle.right(360);
 	<div class="col_12">
 		<h2>リンク</h2>
 		<ul>
-			<li><a href='https://github.com/ycatch/p5.turtle.js/blob/master/README.md' target='_blank'>コマンドリファレンス</a></li>
+			<li><a href='README.md' target='_blank'>コマンドリファレンス</a></li>
 			<li><a href='http://p5js.org/' target='_blank'>p5.js</a></li>
 			<li><a href='http://p5play.molleindustria.org/' target='_blank'>p5.play.js</a></li>
 			<li><a href='https://github.com/ycatch/p5.turtle.js' target='_blank'>Github - p5.turtle.js</a></li>
