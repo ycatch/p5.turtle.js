@@ -1,4 +1,4 @@
-/** Example of turtle graphics for p5.js. 
+/** Example of turtle graphics for p5.js.
 	Copyright 2015 Yutaka Kachi released under the MIT license.
  */
 
@@ -16,9 +16,9 @@ setup = function() {
 	turtleSprite = createSprite(0, 0, 56, 64);
 	turtleSprite.addAnimation("moving", "images/turtle_1.png", "images/turtle_4.png");
 	turtleSprite.changeAnimation("moving");
-	
+
 	tPlane = createGraphics(width, height); // pen layer
-	
+
 	// Start turtle code - recode turtle moving. -------------------------------------
 	turtle = new Turtle();
 	turtle.x = 140;
@@ -40,7 +40,7 @@ draw = function() {
 	turtle.draw2(pathPointer);
 	image(tPlane);
 	drawSprites();
-	
+
 	pathPointer += 1;
 	if (pathPointer >= turtles_path.length) {
 		pathPointer = 0;
@@ -68,7 +68,7 @@ function Turtle() {
 	for (var prop in body) {
 		this[prop] = body[prop];
 	}
-	
+
 	this.color = {
 		black : "#000000",
 		gray: "#808080",
@@ -90,29 +90,29 @@ function Turtle() {
 		var count = abs(int(length / this.step));
 		var dir = 1;
 		if(length < 0) {dir = -1};
-		
+
 		for(var i=0; i < count - 1; i++) {
 			this.x += dir * this.step * xx;
 			this.y += dir * this.step * yy;
-			this.copy();			
+			this.copy();
 		}
 		this.x = x0 + length * xx;
 		this.y = y0 + length * yy;
 		this.copy();
 
 	};
-	
+
 	this.back = function(length) {
 		this.forward(-length);
 	};
-	
+
 	this.left = function(angleInDegrees) {
 		var angle0 = this.angleInRadians;
 		var targetAngle = angleInDegrees * Math.PI / 180.0;
 		var count = abs(int(targetAngle / this.stepAngle));
 		var dir = 1;
 		if(targetAngle < 0) {dir = -1};
-		
+
 		for(var i=0; i < count - 1; i++) {
 			this.angleInRadians += dir * this.stepAngle;
 			this.copy();
@@ -120,7 +120,7 @@ function Turtle() {
 		this.angleInRadians = angle0 + targetAngle;
 		this.copy();
 	};
-	
+
 	this.right = function(angleInDegrees) {
 		this.left(-angleInDegrees);
 	};
@@ -133,11 +133,11 @@ function Turtle() {
 			target[prop] = this[prop];
 		}
 	};
-	
+
 	// drawing turtle in loop
 	this.draw2 = function(pointer) {
 		var target = turtles_path[pointer];
-		
+
 		// draw path by Pen
 		if (target.penDown) {
 			tPlane.strokeWeight(target.lineWidth);
@@ -148,9 +148,9 @@ function Turtle() {
 			}
 			tPlane.line(target.x, target.y, turtles_path[nextPointer].x, turtles_path[nextPointer].y);
 		}
-		
+
 		// draw turtle by sprite
-		turtleSprite.rotation = target.angleInRadians * -180 / Math.PI + 180;
+		turtleSprite.rotation = target.angleInRadians / Math.PI * (-180) + 180;
 		turtleSprite.position.x = target.x;
 		turtleSprite.position.y = target.y;
 	};
