@@ -12,13 +12,9 @@ http://ycatch.github.io/p5.turtle.js/
 
 ## 利用条件
 
-Copyright 2015 - 2016 Yutaka Kachi released under the MIT license.
+Copyright 2015 Yutaka Kachi released under the MIT license.
 
 https://opensource.org/licenses/MIT
-
-
-p5.js and p5.play.js is released under the LGPL2.1
-
 
 
 ## コマンド
@@ -53,3 +49,4 @@ p5.js and p5.play.js is released under the LGPL2.1
 - turtle.color.magenta :	"#ff00ff"	紫
 - turtle.color.aqua :		"#00ffff"	水色
 - turtle.color.white :		"#ffffff"	白
+
