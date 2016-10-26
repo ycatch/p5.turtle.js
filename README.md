@@ -17,6 +17,9 @@ Copyright 2015 Yutaka Kachi released under the MIT license.
 https://opensource.org/licenses/MIT
 
 
+p5.js and p5.play.js is released under the LGPL2.1
+
+
 ## Commands
 
 - turtle.forward(length)
@@ -49,4 +52,3 @@ https://opensource.org/licenses/MIT
 - turtle.color.magenta: "#ff00ff"
 - turtle.color.aqua: "#00ffff"
 - turtle.color.white: "#ffffff"
-
