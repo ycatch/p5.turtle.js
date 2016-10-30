@@ -52,3 +52,14 @@ p5.js and p5.play.js is released under the LGPL2.1
 - turtle.color.magenta: "#ff00ff"
 - turtle.color.aqua: "#00ffff"
 - turtle.color.white: "#ffffff"
+
+
+## p5.play.js
+
+2016.10.27: p5.turtle.js use p5.play.js with #119 patch.
+it needs for instance mode and createGraphics.
+
+- PR: Fix default camera in instance mode #119
+  https://github.com/molleindustria/p5.play/pull/119
+- Issue: createGraphics does not work with p5.play in instance mode. #104
+  https://github.com/molleindustria/p5.play/issues/104
